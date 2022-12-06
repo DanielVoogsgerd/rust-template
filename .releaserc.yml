@@ -1,0 +1,12 @@
+branches:
+  - main
+  - dev
+
+plugins:
+  - "@semantic-release/commit-analyzer"
+  # - "@semantic-release/releases-notes-generator"
+  # - "@semantic-release/github"
+  - - "@semantic-release/exec"
+    - prepareCmd: "echo prepared"
+      publishCmd: "echo published"
+
