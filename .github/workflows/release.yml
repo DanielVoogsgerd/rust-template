@@ -22,10 +22,14 @@ jobs:
         with:
           node-version: 'lts/*'
 
+      - name: Install semantic-release (plugins)
+        run: |
+          npm install -g semantic-release/release-notes-generator
+
       - name: Create zip
         run: zip -r template.zip template/
 
       - name: Release
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
-        run: npx semantic-release
+        run: npm exec semantic-release
