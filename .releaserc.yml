@@ -6,7 +6,10 @@ branches:
 plugins:
   - "@semantic-release/commit-analyzer"
   - "@semantic-release/release-notes-generator"
-  # - "@semantic-release/github"
+  - - "@semantic-release/github"
+    - assets:
+      - path: template.zip
+        label: Template ZIP
   # - - "@semantic-release/exec"
     # - prepareCmd: "echo prepared"
       # publishCmd: "echo published"
